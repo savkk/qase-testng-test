@@ -5,18 +5,19 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TestClass {
     @Test
     @CaseId(1)
     public void success() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(new Random().nextInt(10)).toMillis());
+        Thread.sleep(Duration.ofSeconds(ThreadLocalRandom.current().nextInt(3, 10 + 1)).toMillis());
     }
 
     @Test
     @CaseId(2)
     public void failure() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(new Random().nextInt(10)).toMillis());
+        Thread.sleep(Duration.ofSeconds(ThreadLocalRandom.current().nextInt(3, 10 + 1)).toMillis());
         throw new AssertionError();
     }
 }
