@@ -4,7 +4,6 @@ import io.qase.testng.CaseId;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TestClass {
